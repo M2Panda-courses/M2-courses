@@ -1,0 +1,17 @@
+{
+  "name": "gold/module-fish",
+  "description": "Pretty fish",
+  "require": {
+    "php": "^8.1"
+  },
+  "type": "magento2-module",
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "files": ["registration.php"],
+    "psr-4": {
+      "Gold\\Fish\\": ""
+    }
+  }
+}
