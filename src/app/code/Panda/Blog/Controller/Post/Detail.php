@@ -2,22 +2,19 @@
 
 namespace Panda\Blog\Controller\Post;
 
-use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
 class Detail implements HttpGetActionInterface
 {
-    private $session;
-    public function __construct(
-        Session $session,
-    ){
-        $this->session = $session;
-    }
 
-    public function execute()
+    public function __construct(
+        private PageFactory $pageFactory,
+    ){}
+
+    public function execute(): Page
     {
-        echo '<pre>';
-        var_dump($this->session->getData());
-        die();
+        return $this->pageFactory->create();
     }
 }
