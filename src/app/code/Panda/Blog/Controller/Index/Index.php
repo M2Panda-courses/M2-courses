@@ -3,11 +3,19 @@
 namespace Panda\Blog\Controller\Index;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\Controller\Result\Forward;
+use Magento\Framework\Controller\Result\ForwardFactory;
 
 class Index implements HttpGetActionInterface
 {
-    public function execute()
+    public function __construct(
+        private ForwardFactory $forwardFactory,
+    ){}
+
+    public function execute(): Forward
     {
-        die ('Blog Index1');
+        /** @var Forward $forward */
+        $forward = $this->forwardFactory->create();
+        return $forward->setController('post')->forward('list');
     }
 }
