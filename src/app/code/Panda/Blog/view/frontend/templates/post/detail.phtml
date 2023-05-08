@@ -1,5 +1,13 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Panda\Blog\ViewModel\Post $postVm */
+$postVm =$block->getData('post_vm');
+$post =$postVm->getDetail();
+?>
+
 <div class="blog-post-detail">
-    <h1><?= __('Title') ?></h1>
-    <p><em><?= __('Created at: %1', '10/12/2023')?></em></p>
-    <p><?= __('Content')?></p>
+    <h1><?= $escaper->escapeHtml($post->getTitle()) ?></h1>
+    <p><em><?= __('Created at: %1', $post->getCreatedAt())?></em></p>
+    <p><?= $escaper->escapeHtml($post->getContent(), ['em', 'p', 'strong'])?></p>
 </div>
