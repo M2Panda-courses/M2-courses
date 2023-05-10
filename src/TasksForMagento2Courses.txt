@@ -11,6 +11,7 @@
 10 tasks : Create a new function within a ViewModel
 11 tasks :
 12 tasks : Create cp(courses part)/1 branch
+13 tasks : Add product qty in stock after buy button
 2 part of courses :
 1 tasks :
 2 tasks :

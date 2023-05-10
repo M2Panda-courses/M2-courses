@@ -1,0 +1,15 @@
+<?php
+/** @var Magento\Catalog\Block\Product\View $block */
+///** @var Magento\Framework\View\Element\Template $block */
+/** @var Panda\Stock\ViewModel\CatalogInventory $productVm */
+
+$productId = $block->getProduct()->getId();
+$productVm = $block->getData('product_stock_qty_vm');
+$stockProduct = $productVm->getDetail((int) $productId);
+?>
+
+<div class="product-qty">
+    <em>
+        <?= __('Product on stock: %1', intval($stockProduct->getQty()))?>
+    </em>
+</div>
