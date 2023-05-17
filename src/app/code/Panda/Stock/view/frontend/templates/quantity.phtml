@@ -1,0 +1,65 @@
+<?php
+/** @var Magento\Catalog\Block\Product\View $block */
+///** @var Magento\Framework\View\Element\Template $block */
+/** @var Panda\Stock\ViewModel\CatalogInventory $productVm */
+
+$productId = $block->getProduct()->getId();
+$productVm = $block->getData('product_stock_qty_vm');
+$stockProduct = $productVm->getDetail((int) $productId);
+
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()) :?>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <?php if ($block->shouldRenderQuantity()) :?>
+                <div class="field qty">
+                    <label class="label" for="qty"><span><?= $block->escapeHtml(__('Qty')) ?></span></label>
+                    <div class="control">
+                        <input type="number"
+                               name="qty"
+                               id="qty"
+                               min="0"
+                               value="<?= $block->getProductDefaultQty() * 1 ?>"
+                               title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
+                               class="input-text qty"
+                               data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                        />
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="actions">
+                <button type="submit"
+                        title="<?= $block->escapeHtmlAttr($buttonTitle) ?>"
+                        class="action primary tocart"
+                        id="product-addtocart-button" disabled>
+                    <span><?= $block->escapeHtml($buttonTitle) ?></span>
+                </button>
+                <button class="action allbutton" id="all-button" type="button">Select all products</button>
+                <?= $block->getChildHtml('', true) ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        }
+    }
+</script>
+<script>
+    require(['jquery'], function ($) {
+        $(document).ready(function () {
+            var stock = <?php echo $stockProduct->getQty(); ?>;
+            var qtyInput = $('#qty');
+
+            $('#all-button').click(function () {
+                qtyInput.val(stock);
+            });
+        });
+    });
+</script>
+
+
