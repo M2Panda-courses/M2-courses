@@ -5,7 +5,7 @@ return [
     ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'X4pAvpT93HKVOglSYEkC2SvpeXcBbHO9'
+            'id_salt' => 'wHvG72dXgTy433G5bZDXldFgzNkCVO93'
         ],
         'frontend' => [
             'default' => [
@@ -49,7 +49,7 @@ return [
         'consumers_wait_for_messages' => 1
     ],
     'crypt' => [
-        'key' => '87135d93d54dc3c520c7aa661d625180'
+        'key' => 'f25f74f3949dafb3f5ae0bcafab33545'
     ],
     'db' => [
         'table_prefix' => '',
@@ -112,7 +112,7 @@ return [
     'cache_types' => [
         'config' => 1,
         'layout' => 1,
-        'block_html' => 0,
+        'block_html' => 1,
         'collections' => 1,
         'reflection' => 1,
         'db_ddl' => 1,
@@ -121,7 +121,7 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
-        'full_page' => 0,
+        'full_page' => 1,
         'config_webservice' => 1,
         'translate' => 1
     ],
@@ -129,6 +129,6 @@ return [
         'magento.test'
     ],
     'install' => [
-        'date' => 'Sat, 29 Apr 2023 12:08:25 +0000'
+        'date' => 'Thu, 08 Jun 2023 16:10:13 +0000'
     ]
 ];
