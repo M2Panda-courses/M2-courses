@@ -6,4 +6,5 @@ ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
     'Panda_BlogExtra',
     __DIR__,
+
 );
