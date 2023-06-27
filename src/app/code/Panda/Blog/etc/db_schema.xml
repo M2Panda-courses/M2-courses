@@ -8,6 +8,9 @@
                 comment="Creation Time"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="mediumtext" name="content" nullable="true" comment="Post Content"/>
+        <column xsi:type="text" name="thumbnail" nullable="false" comment="thumbnail"/>
+        <column xsi:type="text" name="categories" nullable="false" comment="categories"/>
+        <column xsi:type="text" name="tags" nullable="false" comment="tags"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>

@@ -574,6 +574,9 @@
       <path value="$PROJECT_DIR$/src/vendor/magento/framework-amqp" />
       <path value="$PROJECT_DIR$/src/vendor/magento/module-page-builder" />
       <path value="$PROJECT_DIR$/src/vendor/magento/module-swagger-webapi" />
+      <path value="$PROJECT_DIR$/src/vendor/codeception/lib-web" />
+      <path value="$PROJECT_DIR$/src/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/src/vendor/psr/clock" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
