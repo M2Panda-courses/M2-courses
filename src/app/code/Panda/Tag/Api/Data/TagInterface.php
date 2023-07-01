@@ -12,6 +12,7 @@ interface TagInterface
     const ID = 'id';
     const CREATED_AT = 'created_at';
     const NAME = 'name';
+    const POPULARITY = 'popularity';
 
     /**
      * @return int
@@ -39,5 +40,16 @@ interface TagInterface
      * @return $this
      */
     public function setName($name);
+
+    /**
+     * @return int
+     */
+    public function getPopularity();
+
+    /**
+     * @param int $popularity
+     * @return $this
+     */
+    public function setPopularity($popularity);
 
 }

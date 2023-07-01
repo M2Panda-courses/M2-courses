@@ -5,12 +5,16 @@
 $tagVm = $block->getData('tag_vm');
 ?>
 
-<div class="tag-sidebar">
+
+
+
+<div class="tag-sidebar" id="tagCloud">
     <p><strong><?= __('Tags') ?></strong></p>
-    <ul>
+    <ul id="tagList">
         <?php foreach ($tagVm->getList() as $tag): ?>
             <li>
-                <a href="<?= $block->getUrl('tag/tag/detail', ['id' => $tag->getData('id')]) ?>">
+                <a style="font-size: calc(10px + <?php echo $tag->getData('popularity'); ?> * 1px"
+                   href="<?= $block->getUrl('tag/tag/detail', ['id' => $tag->getData('id')]) ?>">
                     <?= $escaper->escapeHtml($tag->getData('name')) ?>
                 </a></li>
         <?php endforeach ?>

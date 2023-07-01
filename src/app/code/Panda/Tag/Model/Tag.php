@@ -27,4 +27,13 @@ class Tag extends AbstractModel implements TagInterface
         $this->setData(self::NAME, $name);
     }
 
+    public function getPopularity()
+    {
+        return $this->getData(self::POPULARITY);
+    }
+
+    public function setPopularity($popularity)
+    {
+        $this->setData(self::POPULARITY, $popularity);
+    }
 }
