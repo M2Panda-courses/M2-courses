@@ -1,0 +1,18 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Panda\Tag\ViewModel\Tag $tagVm */
+$tagVm = $block->getData('tag_vm');
+?>
+
+<div class="tag-sidebar">
+    <p><strong><?= __('Tags') ?></strong></p>
+    <ul>
+        <?php foreach ($tagVm->getList() as $tag): ?>
+            <li>
+                <a href="<?= $block->getUrl('tag/tag/detail', ['id' => $tag->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($tag->getData('name')) ?>
+                </a></li>
+        <?php endforeach ?>
+    </ul>
+</div>
