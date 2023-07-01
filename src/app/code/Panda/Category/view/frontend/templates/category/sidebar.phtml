@@ -10,7 +10,7 @@ $categoryVm = $block->getData('category_vm');
     <ul>
         <?php foreach ($categoryVm->getList() as $category): ?>
             <li>
-                <a href="<?= $block->getUrl('blog/post/detail', ['id' => $category->getData('id')]) ?>">
+                <a href="<?= $block->getUrl('category/category/detail', ['id' => $category->getData('id')]) ?>">
                     <?= $escaper->escapeHtml($category->getData('name')) ?>
                 </a></li>
         <?php endforeach ?>
