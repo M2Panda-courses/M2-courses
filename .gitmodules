@@ -1,0 +1,3 @@
+[submodule "src/app/code/Panda/Blog"]
+	path = src/app/code/Panda/Blog
+	url = git@github.com:M2Panda-courses/my_blog.git
